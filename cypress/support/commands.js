@@ -23,3 +23,15 @@
 //
 // -- This will overwrite an existing command --
 // Cypress.Commands.overwrite('visit', (originalFn, url, options) => { ... })
+
+Cypress.Commands.add("login", (email, senha) => {
+  cy.get('[data-test="login-email"] > .MuiInputBase-root > .MuiInputBase-input').type(email);
+  cy.get('[data-test="login-password"] > .MuiInputBase-root > .MuiInputBase-input').type(senha);
+  cy.get('[data-test="login-submit"]').click();
+});
+
+Cypress.Commands.add("loginRapido", () => {
+    cy.fixture("login").then((user) => {
+        cy.login(user.email, user.senha)
+    })
+})
