@@ -4,8 +4,9 @@ describe('Funcionalidade: Login', () => {
     beforeEach(() => {
         cy.visit('/login')
     });
+    
     it.skip('Deve fazer o login com sucesso', () => {
-        cy.fixture('login').then((user) => {
+        cy.fixture('usuario').then((user) => {
             cy.login(user.email, user.senha)
             cy.get('[data-test="dashboard-welcome"]').should('contain', `Bem-vindo ${user.nome}`)
         })

@@ -4,7 +4,8 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "cy:headless": "npx cypress run",
+    "cy:dash": "npx cypress run --record --key 7b77c478-76d9-4b4e-be00-c6f07cb05d97"
   },
   "repository": {
     "type": "git",
@@ -18,7 +19,8 @@
   },
   "homepage": "https://github.com/renatosantanaoliveira/dojo-cypress-ambev-turma2#readme",
   "devDependencies": {
-    "cypress": "^10.6.0"
+    "cypress": "^10.6.0",
+    "cypress-grep": "^3.0.2"
   },
   "dependencies": {
     "faker-br": "^0.4.1"
